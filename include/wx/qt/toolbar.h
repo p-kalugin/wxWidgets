@@ -32,7 +32,6 @@ public:
 
     virtual ~wxToolBar();
 
-    void Init();
     bool Create(wxWindow *parent,
                 wxWindowID id,
                 const wxPoint& pos = wxDefaultPosition,
@@ -68,6 +67,8 @@ protected:
     virtual void DoSetToggle(wxToolBarToolBase *tool, bool toggle);
 
 private:
+    void Init();
+
     Qt::ToolButtonStyle GetButtonStyle();
 
     QToolBar *m_qtToolBar;
