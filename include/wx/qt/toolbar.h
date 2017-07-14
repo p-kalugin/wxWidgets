@@ -39,10 +39,9 @@ public:
                 long style = wxTB_DEFAULT_STYLE | wxNO_BORDER,
                 const wxString& name = wxToolBarNameStr);
 
-    virtual wxToolBarToolBase *FindToolForPosition(wxCoord x, wxCoord y) const;
-    virtual QToolBar *GetHandle() const;
+    virtual wxToolBarToolBase *FindToolForPosition(wxCoord x, wxCoord y) const wxOVERRIDE;
 
-    virtual void SetWindowStyleFlag( long style );
+    virtual void SetWindowStyleFlag( long style ) wxOVERRIDE;
     virtual bool Realize() wxOVERRIDE;
 
     virtual wxToolBarToolBase *CreateTool(int toolid,
@@ -52,19 +51,21 @@ public:
                                           wxItemKind kind,
                                           wxObject *clientData,
                                           const wxString& shortHelp,
-                                          const wxString& longHelp);
+                                          const wxString& longHelp) wxOVERRIDE;
 
     virtual wxToolBarToolBase *CreateTool(wxControl *control,
-                                          const wxString& label);
+                                          const wxString& label) wxOVERRIDE;
+
+    virtual QToolBar *GetHandle() const wxOVERRIDE;
 
 protected:
 
     QActionGroup* GetActionGroup(size_t pos);
-    virtual bool DoInsertTool(size_t pos, wxToolBarToolBase *tool);
-    virtual bool DoDeleteTool(size_t pos, wxToolBarToolBase *tool);
-    virtual void DoEnableTool(wxToolBarToolBase *tool, bool enable);
-    virtual void DoToggleTool(wxToolBarToolBase *tool, bool toggle);
-    virtual void DoSetToggle(wxToolBarToolBase *tool, bool toggle);
+    virtual bool DoInsertTool(size_t pos, wxToolBarToolBase *tool) wxOVERRIDE;
+    virtual bool DoDeleteTool(size_t pos, wxToolBarToolBase *tool) wxOVERRIDE;
+    virtual void DoEnableTool(wxToolBarToolBase *tool, bool enable) wxOVERRIDE;
+    virtual void DoToggleTool(wxToolBarToolBase *tool, bool toggle) wxOVERRIDE;
+    virtual void DoSetToggle(wxToolBarToolBase *tool, bool toggle) wxOVERRIDE;
 
 private:
     void Init();

@@ -48,7 +48,7 @@ public:
 
     virtual bool SupportsExtraControl() const wxOVERRIDE { return true; }
 
-    virtual QFileDialog *GetHandle() const;
+    virtual QFileDialog *GetHandle() const wxOVERRIDE;
 
 private:
 

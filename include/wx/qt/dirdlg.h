@@ -36,7 +36,7 @@ public:     // overrides from wxGenericDirDialog
     wxString GetPath() const wxOVERRIDE;
     void SetPath(const wxString& path) wxOVERRIDE;
 
-    virtual QFileDialog *GetHandle() const;
+    virtual QFileDialog *GetHandle() const wxOVERRIDE;
 
 private:
 
