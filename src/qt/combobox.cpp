@@ -131,6 +131,12 @@ void wxComboBox::Dismiss()
     GetHandle()->hidePopup();
 }
 
+void wxComboBox::Clear()
+{
+    wxTextEntry::Clear();
+    wxItemContainer::Clear();
+}
+
 void wxComboBox::SetSelection( long from, long to )
 {
     // SelectAll uses -1 to -1, adjust for qt:
