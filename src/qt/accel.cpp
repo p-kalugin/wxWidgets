@@ -85,7 +85,7 @@ QList< QShortcut* > wxAcceleratorTable::ConvertShortcutTable( QWidget *parent ) 
 {   
     QList< QShortcut* > qtList;
     
-    for ( wxAccelList::Node *node = M_ACCELDATA->m_accels.GetFirst(); node; node = node->GetNext() )
+    for ( wxAccelList::compatibility_iterator node = M_ACCELDATA->m_accels.GetFirst(); node; node = node->GetNext() )
     {
         qtList << ConvertAccelerator( node->GetData(), parent );
     }
