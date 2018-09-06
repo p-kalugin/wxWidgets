@@ -575,11 +575,11 @@ all events (or any selection of them) to the parent window.
 
 @subsection overview_events_nexthandler Event Handlers Chain
 
-The step 4 of the event propagation algorithm checks for the next handler in
+The step 5 of the event propagation algorithm checks for the next handler in
 the event handler chain. This chain can be formed using
 wxEvtHandler::SetNextHandler():
         @image html overview_events_chain.png
-(referring to the image, if @c A->ProcessEvent is called and it doesn't handle
+(referring to the image, if @c A->ProcessEvent is called and if it doesn't handle
  the event, @c B->ProcessEvent will be called and so on...).
 
 Additionally, in the case of wxWindow you can build a stack (implemented using
@@ -827,7 +827,7 @@ grab all the input for an existing dialog box, and edit it 'in situ',
 before restoring its behaviour to normal. So even if the application
 has derived new classes to customize behaviour, your utility can indulge
 in a spot of body-snatching. It could be a useful technique for on-line
-tutorials, too, where you take a user through a serious of steps and
+tutorials, too, where you take a user through a series of steps and
 don't want them to diverge from the lesson. Here, you can examine the events
 coming from buttons and windows, and if acceptable, pass them through to
 the original event handler. Use PushEventHandler/PopEventHandler
